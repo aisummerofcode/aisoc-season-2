@@ -1,7 +1,6 @@
-
 # 🆓 Build Your First LLM Application - Raw and Stupid!
 
-A completely free document Q&A application with conversation memory, built during the AI Summer of Code Season 2.
+A completely free document Q&A application with conversation memory, built during Week 1 of AI Summer of Code Season 2.
 
 ## 🎯 What This App Does
 
@@ -187,3 +186,4 @@ MIT License - feel free to use this code for learning and building!
 - Groq for providing free, fast LLM inference
 - HuggingFace for open-source embeddings
 - Streamlit for making web apps simple
+
