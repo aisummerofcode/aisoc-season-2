@@ -187,3 +187,6 @@ MIT License - feel free to use this code for learning and building!
 - HuggingFace for open-source embeddings
 - Streamlit for making web apps simple
 
+
+### 👩🏻‍🏫 Mentor
+- Chidozie Managwu - [Linkedin](https://www.linkedin.com/in/chidozie-managwu/), [Github](https://github.com/chidoziemanagwu)
