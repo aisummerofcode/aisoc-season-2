@@ -1,6 +1,6 @@
 ### AI Microservice Demo: FastAPI, Microservices, and Production Best Practices
 
-This repository contains a complete, copy-pasteable guide for a FastAPI AI inference microservice with Pydantic validation, dependency injection for an ML model, API-key protection, and caching using fastapi-cache2. It includes full code, virtual environment and install steps, Docker + Redis for production-like testing, VS Code run/debug configs, and troubleshooting.
+This repository contains a complete, copy-pasteable guide for a FastAPI AI inference microservice with Pydantic validation, dependency injection for an ML model, API-key protection, and caching using fastapi-cache2. It includes full code, virtual environment and install steps.
 
 ### Table of Contents
 
@@ -90,4 +90,5 @@ To test /predict in Swagger UI, add header X-API-Key: secret-api-key and request
   "feature2": 5.0
 }
 ```
+
 
