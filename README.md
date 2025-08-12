@@ -1,5 +1,5 @@
 <p align ="center">
-    <img width = "500%" src="image/aisummerofcode_logo.png"  alt ="AI Summer Of Code">
+    <img width = "200%" src="image/aisummerofcode_logo.png"  alt ="AI Summer Of Code">
 </p>
 <h1 align="center">
     <strong>AI Summer Of Code: A Free 4-Month Course on ML and AI Engineering</strong>
