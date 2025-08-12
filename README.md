@@ -37,10 +37,10 @@ Learn machine learning and ai engineering from regression and classification to 
 ## About AISOC
 
 This is a practical course where you'll learn to build, deploy and maintain machine learning and ai systems. We focus on the engineering side from training models to getting them to work in production. Cutting across key skills: 
-- Applied AI
-- Machine Learing
-- LLM Engineering
-- Production AI
+- [Applied AI](/aisoc-season-2/Applied_AI)
+- [Machine Learing](/aisoc-season-2/Machine%20Learning/)
+- [LLM Engineering](/aisoc-season-2/LLM%20Engineering/)
+- [Production AI](/aisoc-season-2/Production%20AI/)
 
 **You'll learn:**
 - Core ML, LLM algorithms and when to use them
@@ -73,7 +73,7 @@ Working knowledge of Python or similar languages in the context of software deve
 
 ### MACHINE LEARNING
 * MLFOUNDATIONS*
-- [Getting Started with ML]
+- Getting Started with ML
 - [Preparing Data for Machine Learning](/aisoc-season-2/Machine%20Learning/week_1/day_4_data_prep/)
 - [ML Workflow with Python & Scikit-Learn](/aisoc-season-2/Machine%20Learning/week_1/day_5_workflow/)
 - Statistical Methods in Machine Learning
