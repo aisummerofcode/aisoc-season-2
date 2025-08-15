@@ -1,0 +1,8 @@
+groq
+llama-index-core
+llama-index-readers-file
+llama-index-embeddings-huggingface
+llama-index-llms-groq
+llama-index-llms-vertex
+llama-index-vector-stores-chroma
+tiktoken
