@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package agentic_server;
+
+message ChatRequest {
+    string message = 1;
+    string name = 2;
+    string location = 3;
+}
+
+message ChatResponse {
+    int32 status = 1;
+    string message = 2;
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {
+    string status = 1;
+}
+
+service AgenticServer {
+    rpc Chat(ChatRequest) returns (ChatResponse) {}
+    rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
+}
