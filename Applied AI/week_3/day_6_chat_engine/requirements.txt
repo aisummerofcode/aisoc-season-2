@@ -8,3 +8,4 @@ llama-index-vector-stores-chroma
 tiktoken
 fastapi
 uvicorn
+python-multipart
