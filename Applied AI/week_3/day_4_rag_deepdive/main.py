@@ -86,7 +86,7 @@ if __name__=="__main__":
 
     index = retrieve_embedding()
 
-    query = "What was my last question?"
+    query = "What is AI Summer of Code"
 
     print("\nStarting response generation...\n")
     start_time=time.time()
