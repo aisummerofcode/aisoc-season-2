@@ -53,7 +53,6 @@ async def process(
                 },
                 status_code=400
             )
-        
 
 @app.post("/chat")
 async def generate(
@@ -90,8 +89,6 @@ async def generate(
             },
             status_code=400
         )
-generate
-
 
 if __name__=="__main__":
     import uvicorn
