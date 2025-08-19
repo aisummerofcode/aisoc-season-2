@@ -4,6 +4,6 @@ If you were to implement an improvement to the chat history module of our previo
 
 Write a Python script that defines these 2 functions without worrying yet about integrating them to the `ChatMemoryBuffer` class or the rest of the chat engine. The retrieval function should return a list of all the message pairs in the chat history.
 
-[Submit your solution as an issue here](https://github.com/aisummerofcode/aisoc-season-2/issues/new/choose)
+[Submit your solution as an issue here](https://forms.gle/rPX8uuFcVUfHwQKD6)
 
 **Deadline:** Sunday, August 24, 2025
