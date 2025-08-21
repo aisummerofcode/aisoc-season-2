@@ -14,7 +14,7 @@
 git clone https://github.com/aisummerofcode/aisoc-season-2.git
 
 # Navigate to the project directory
-cd "aisoc-season-2/Applied AI/week_4/day_2_build_a-frontend_for_your_llm"
+cd "aisoc-season-2/Applied AI/week_4/day_2_frontend"
 
 # Verify you're in the correct directory
 ls -la  # Should see app.py, requirements.txt, src/ folder

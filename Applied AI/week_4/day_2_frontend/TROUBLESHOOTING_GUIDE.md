@@ -26,8 +26,8 @@ python --version
 python3 --version
 
 # Use specific Python version
-python3.9 -m venv venv
 python3.10 -m venv venv
+python3.11 -m venv venv
 ```
 
 ### 2. Package Installation Issues
