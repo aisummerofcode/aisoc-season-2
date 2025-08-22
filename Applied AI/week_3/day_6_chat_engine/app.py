@@ -74,7 +74,7 @@ async def generate(
     logger.info(f"""The user's query is: {query["query"]}""")
     
     try:
-        response = generate_response(
+        response = ChatEngine().generate_response(
             query["query"], query["chat_uid"], query["model"], 
             chatbot_name=query["chatbot_name"], app_state=app.state
         )
