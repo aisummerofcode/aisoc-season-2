@@ -32,6 +32,9 @@ logger = set_logger(
     to_file=True, log_file_name=LOG_FILENAME, to_console=True, custom_formatter=ColorFormmater
 )
 
+class TempAppState:
+    chat_memory: ChatMemoryBuffer
+
 class FileUtils:
 
     ALLOWED_FILES: List = [
@@ -65,7 +68,7 @@ class FileUtils:
                 )
             
             if not self.is_allowed_file(filename):
-                message = f"File format {filename.rsplit('.',1)[-1].lower()} not supported. Use any of {ALLOWED_FILES}"
+                message = f"File format {filename.rsplit('.',1)[-1].lower()} not supported. Use any of {self.ALLOWED_FILES}"
                 logger.warning(message)
                 return JSONResponse(
                     content={"status": message},
@@ -73,9 +76,7 @@ class FileUtils:
                 )
         
         return JSONResponse(
-            content={        
-                "status": "success"
-            },
+            content={"status": "success"},
             status_code=200
         )
 
@@ -109,6 +110,7 @@ class FileUtils:
                 raise UploadError(message)
             
         raise FileCheckError(file_checks["status"])
+
 class EmbeddingUtils:
 
     tokenizer = SentenceSplitter()._tokenizer
@@ -126,7 +128,7 @@ class EmbeddingUtils:
     ):
 
         collection_name = f"aisoc-{chat_uid}-embeddings"
-        chroma_collection = init_chroma(collection_name, task="create")
+        chroma_collection = ChromaUtils().init_chroma(collection_name, task="create")
 
         try:
             logger.info(f"Generating vector embeddings for collection: {collection_name}...")
@@ -180,7 +182,7 @@ class EmbeddingUtils:
     async def retrieve_embeddings(self, chat_uid: str):
 
         collection_name = f"aisoc-{chat_uid}-embeddings"
-        chroma_collection = init_chroma(collection_name)
+        chroma_collection = ChromaUtils().init_chroma(collection_name)
 
         collection_count = chroma_collection.count()
         if collection_count == 0:
@@ -197,93 +199,117 @@ class EmbeddingUtils:
 
         return embeddings, collection_count
 
-class TempAppState:
-    chat_memory: ChatMemoryBuffer
+class ChromaUtils:
 
-def init_chroma(collection_name: str, task: str = "retrieve"):
-    logger.info(f"Initializing Chroma database...")
-    try:
-        # print(F"CHROMADB_SSL >> {CHROMADB_SSL}")
-        chroma_client = chromadb.HttpClient(
-            host=CHROMADB_HOST,
-            port=CHROMADB_PORT,
-            ssl=True
-        ) if CHROMADB_SSL \
-            else chromadb.HttpClient(host=CHROMADB_HOST)
+    def get_chroma_client(self, use_server: bool = True):
         
-    except Exception as e:
-        message = f"Error connecting to Chroma database for collection `{collection_name}`: {e}"
-        logger.error(message)
-        raise ChromaConnectionError(message)
+        """
+        Initialize Chroma in server mode by default and provide CHROMA_SERVER_HOST/PORT
+        If you do not want to use an external server, set CHROMA_USE_SERVER=false; this will use ChromaDB persistent client mode
+        """
 
-    collection = chroma_client.get_or_create_collection(
-        collection_name,
-        embedding_function=None, # we are not passing an embedding_func here as we are handling embedding generation in generate_and_store_embeddings()
-        metadata={"hnsw": "cosine"}
-    )
-    logger.info(f"Collection {task}d: {collection_name}")
-    return collection
+        if use_server:
+            # Only use server mode if explicitly requested
+            if CHROMADB_SSL:
+                chroma_client = chromadb.HttpClient(
+                    host=CHROMADB_HOST, port=CHROMADB_PORT, ssl=True
+                )
+            else:
+                chroma_client = chromadb.HttpClient(
+                    host=CHROMADB_HOST, port=CHROMADB_PORT
+                )
+        else:
+            # Embedded, on-disk Chroma (recommended for local dev)
+            chroma_path = os.getenv("CHROMA_PATH", "./chroma_db")
+            # For recent Chroma, 'path' is the kw. Older versions may use 'persist_directory'.
+            try:
+                chroma_client = chromadb.PersistentClient(path=chroma_path)
+            except TypeError:
+                chroma_client = chromadb.PersistentClient(persist_directory=chroma_path)
 
+        return chroma_client
 
-async def generate_response(
-    query: str,
-    chat_uid: str,
-    model: str = LLAMA_3_3_70B,
-    system_prompt: str = DEFAULT_SYSTEM_PROMPT,
-    chatbot_name: str = "",
-    chat_mode: str = "context",
-    verbose: bool = True,
-    streaming: bool = True,
-    app_state: TempAppState = None
-):
-    chatbot_desc = f"Your name is {chatbot_name}. " if chatbot_name else ""
-    system_prompt = system_prompt.format(chatbot_desc=chatbot_desc)
-    logger.info(f"System prompt::{system_prompt}")
+    def init_chroma(self, collection_name: str, task: str = "retrieve"):
+        # use_server = os.getenv("CHROMA_USE_SERVER", "false").lower() in ("1", "true", "yes")
+        logger.info(f"Initializing Chroma database...")
+        try:
+            chroma_client = self.get_chroma_client(use_server=CHROMA_USE_SERVER)
+            
+        except Exception as e:
+            message = f"Error connecting to Chroma database for collection `{collection_name}`: {e}"
+            logger.error(message)
+            raise ChromaConnectionError(message)
 
-    index, index_size = await EmbeddingUtils().retrieve_embeddings(chat_uid)
-    Settings.llm = LLMClient().map_task_to_client(task="rag", model=model)
-    # Settings.embed_model = HuggingFaceEmbedding()
+        collection = chroma_client.get_or_create_collection(
+            collection_name,
+            embedding_function=None, # we are not passing an embedding_func here as we are handling embedding generation in generate_and_store_embeddings()
+            metadata={"hnsw": "cosine"}
+        )
+        logger.info(f"Collection {task}d: {collection_name}")
+        return collection
 
-    # heuristic for choice_k; experiment until you achieve optimal rule
-    # don't use groq models for longer contexts due to rate limit on free plan
-    choice_k = 3 if index_size < 20 \
-        else 5 if index_size < 50 \
-            else index_size//10 if index_size < 200 \
-                else 30
+class ChatEngine:
     
-    app_state.chat_memory = retrieve_chat_memory(choice_k=choice_k, app_state=app_state)
+    async def generate_response(
+        self,
+        query: str,
+        chat_uid: str,
+        model: str = LLAMA_3_3_70B,
+        system_prompt: str = DEFAULT_SYSTEM_PROMPT,
+        chatbot_name: str = "",
+        chat_mode: str = "context",
+        verbose: bool = True,
+        streaming: bool = True,
+        app_state: TempAppState = None
+    ):
+        chatbot_desc = f"Your name is {chatbot_name}. " if chatbot_name else ""
+        system_prompt = system_prompt.format(chatbot_desc=chatbot_desc)
+        logger.info(f"System prompt::{system_prompt}")
 
-    chat_engine = index.as_chat_engine(
-        # llm=llm_client,
-        chat_mode=chat_mode,
-        system_prompt=system_prompt,
-        similarity_top_k=choice_k,
-        verbose=verbose,
-        streaming=streaming,
-        memory=app_state.chat_memory
-    )
+        index, index_size = await EmbeddingUtils().retrieve_embeddings(chat_uid)
+        Settings.llm = LLMClient().map_task_to_client(task="rag", model=model)
+        # Settings.embed_model = HuggingFaceEmbedding()
 
-    response = chat_engine.stream_chat(query)
-    logger.info("Starting response stream...\n")
-    try:
-        for token in response.response_gen:
-            print(token, end="")
-            yield str(token)
-    except:
-        message = f"An error occured while generating chat response."
-        exception = traceback.format_exc()
-        logger.error(f"{message}: {exception}")
-        raise ChatEngineError(f"{message}. See the system logs for more information.")
+        # heuristic for choice_k; experiment until you achieve optimal rule
+        # don't use groq models for longer contexts due to rate limit on free plan
+        choice_k = 3 if index_size < 20 \
+            else 5 if index_size < 50 \
+                else index_size//10 if index_size < 200 \
+                    else 30
+        
+        app_state.chat_memory = self.retrieve_chat_memory(choice_k=choice_k, app_state=app_state)
 
-# Methods for managing chat history within an API session - not ideal for production
-def init_chat_memory(choice_k):
-    token_limit = choice_k*1024
-    return ChatMemoryBuffer.from_defaults(token_limit=token_limit)
+        chat_engine = index.as_chat_engine(
+            # llm=llm_client,
+            chat_mode=chat_mode,
+            system_prompt=system_prompt,
+            similarity_top_k=choice_k,
+            verbose=verbose,
+            streaming=streaming,
+            memory=app_state.chat_memory
+        )
 
-def retrieve_chat_memory(choice_k, app_state:TempAppState=None):
-    try:
-        logger.info("Retrieving chat memory...")
-        return app_state.chat_memory or init_chat_memory(choice_k)
-    except:
-        logger.warning("Could not retrieve chat memory. Creating new memory...")
-        return init_chat_memory(choice_k)
+        response = chat_engine.stream_chat(query)
+        logger.info("Starting response stream...\n")
+        try:
+            for token in response.response_gen:
+                print(token, end="")
+                yield str(token)
+        except:
+            message = f"An error occured while generating chat response."
+            exception = traceback.format_exc()
+            logger.error(f"{message}: {exception}")
+            raise ChatEngineError(f"{message}. See the system logs for more information.")
+
+    # Methods for managing chat history within an API session - not ideal for production
+    def init_chat_memory(self, choice_k):
+        token_limit = choice_k*1024
+        return ChatMemoryBuffer.from_defaults(token_limit=token_limit)
+
+    def retrieve_chat_memory(self, choice_k, app_state:TempAppState=None):
+        try:
+            logger.info("Retrieving chat memory...")
+            return app_state.chat_memory or self.init_chat_memory(choice_k)
+        except:
+            logger.warning("Could not retrieve chat memory. Creating new memory...")
+            return self.init_chat_memory(choice_k)
