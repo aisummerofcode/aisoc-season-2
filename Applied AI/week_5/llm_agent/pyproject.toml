@@ -1,0 +1,20 @@
+[project]
+name = "llm-agent"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "samkehindeayo@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "fastapi (>=0.116.1,<0.117.0)",
+    "uvicorn (>=0.35.0,<0.36.0)",
+    "langchain (>=0.3.27,<0.4.0)",
+    "langgraph (>=0.6.6,<0.7.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
