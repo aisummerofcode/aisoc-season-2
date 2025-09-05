@@ -12,6 +12,8 @@ class EnvConfig:
         self.x_api_key = os.getenv("X_API_KEY")
         self.google_api_key = os.getenv("GOOGLE_API_KEY")
         self.database = os.getenv("DB_DATABASE")
+        self.mongo_conn_url = os.getenv("DB_CONN_URL")
+        self.mongo_database_name = os.getenv("DB_DBNAME")
 
         
 

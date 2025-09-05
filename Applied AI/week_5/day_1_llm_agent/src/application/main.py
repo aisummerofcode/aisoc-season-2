@@ -8,6 +8,7 @@ from contextlib import asynccontextmanager
 from src.utilities.Printer import printer
 from src.config.appconfig import env_config
 from src.application.routes import agentic_router
+from src.infrastructure.database.mongo import MongoDBClientConfig
 
 # Get application settings from the settings module
 settings = get_setting()
@@ -27,7 +28,8 @@ async def lifespan(app: FastAPI):
     This function initializes and cleans up resources during the application's lifecycle.
     """
     # STARTUP Call Check routine
-
+    mongo_client = MongoDBClientConfig()
+    app.state.db_client = mongo_client
     print(running_mode)
     print()
     print()
@@ -36,6 +38,10 @@ async def lifespan(app: FastAPI):
     printer(" ⚡️🏎  Agentic AI Server::Running", "sky_blue")
     yield
     printer(" 🔴 Agentic AI Server::SHUTDOWN", "red")
+
+# Adjust dependency to use our warmed up db_client
+def get_db_client(setting:Settings = Depends(get_setting)):
+    return app.state.db_client
 
 # Create FastAPI app instance
 app = FastAPI(
@@ -94,7 +100,7 @@ def health():
 
 app.include_router(agentic_router,prefix=settings.API_STR,  
                    tags=["Chat"],dependencies=[
-        Depends(get_setting),
+        Depends(get_setting), Depends(get_db_client)
     ],)
 
 if __name__ == "__main__":

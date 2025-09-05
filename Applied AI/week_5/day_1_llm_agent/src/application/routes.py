@@ -18,4 +18,8 @@ async def chat(chat_payload: ChatPayload, x_api_key: Optional[str] = Header(None
     """
     if x_api_key != env_config.x_api_key:
         raise HTTPException(status_code=401, detail="Invalid API key")
-    return await chat_payload.model_dump_json()
+    try:
+        print(chat_payload.query,chat_payload.userId)
+        return ChatResponse(response=chat_payload.query)
+    except Exception as e:
+        print(e)
