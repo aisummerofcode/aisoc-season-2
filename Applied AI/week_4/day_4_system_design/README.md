@@ -1,5 +1,3 @@
 # Basic Components of a RAG System
 
-<img width="2292" height="1304" alt="image" src="https://github.com/user-attachments/assets/69af5487-0098-4394-8d7b-a59dce7170b8" />
-
-
+<img width="1153" height="1133" alt="RAG_system_design drawio (1)" src="https://github.com/user-attachments/assets/35ffadbb-236a-46c0-bc65-9fce326fa75b" />
