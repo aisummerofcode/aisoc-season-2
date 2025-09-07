@@ -1,0 +1,7 @@
+*.pyc
+*.env
+*.log
+*embeddings/
+*docs/
+*logs/
+*chroma/

@@ -1,0 +1,32 @@
+name: AISOC Assignment Submission
+description: "Submit an assignment to get a progress report!"
+title: "Assignment: <insert assignment title>"
+body:
+  # - type: input
+  #   id: name
+  #   attributes:
+  #     label: Project Name
+  #     description: Name of your project
+  #   validations:
+  #     required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a short description of your submission. What solution did you implement and how does it address the problem?
+    validations:
+      required: true
+  # - type: input
+  #   id: url
+  #   attributes:
+  #     label: Project Repository URL
+  #     description: URL of the GitHub repo with your assignment
+  #   validations:
+  #     required: true
+  - type: textarea
+    id: logfile
+    attributes:
+      label: Submit your solution
+      description: Drag and drop your Python script below or use the clip icon to upload the file from your computer. Add any comment you wish to add in the text area.
+    validations:
+      required: true
