@@ -23,12 +23,12 @@ sudo apt-get install gcsfuse
 
 
 # 2. Mount
-sudo mkdir /mnt/storage-mnt/aistore
-sudo gcsfuse -o allow_other --implicit-dirs --file-mode=777 --dir-mode=777 aisoc-rag-service-bucket /mnt/storage-mnt/aistore
+sudo mkdir <mount-directory> # e.g., /mnt/storage-mnt/aistore
+sudo gcsfuse -o allow_other --implicit-dirs --file-mode=777 --dir-mode=777 <gcs-bucket-name> <mount-directory>
 
 ## confirm mount
 mount | grep gcsfuse # OR
-mount | grep /mnt/storage-mnt/aistore
+mount | grep <mount-directory>
 
 
 # 3. Auto mount on boot
@@ -37,7 +37,7 @@ sudo nano /usr/local/bin/mount-gcs.sh
 
 ## add the following
 #!/bin/bash
-/usr/bin/gcsfuse/ -o allow_other --implicit-dirs --file-mode=777 --dir-mode=777 aisoc-rag-service-bucket /mnt/storage-mnt/aistore
+/usr/bin/gcsfuse/ -o allow_other --implicit-dirs --file-mode=777 --dir-mode=777 <gcs-bucket-name> <mount-directory>
 
 ## make it executable
 sudo chmod +x /usr/local/bin/mount-gcs.sh
@@ -46,8 +46,8 @@ sudo chmod +x /usr/local/bin/mount-gcs.sh
 sudo nano /etc/fstab
 
 ## add the following line
-aisoc-rag-service-bucket /mnt/storage-mnt/aistore gcsfuse rw,noauto,user,allow_other
+gcs-bucket-name mount-directory gcsfuse rw,noauto,user,allow_other
 
 
 # 4. Unmount
-sudo umount /mnt/storage-mnt/aistore
+sudo umount <mount-directory>
