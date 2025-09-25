@@ -1,4 +1,5 @@
 import logging, datetime as dt
+from pathlib import Path
 from colorama import Fore, Style
 
 class ColorFormmater(logging.Formatter):
@@ -52,6 +53,11 @@ def set_logger(
         if to_file:
             if not log_file_name:
                 raise ValueError("Must provide `log_file_name`")
+
+            # create log file and parent dirs if not exist
+            log_file = Path(log_file_name)
+            log_file.parent.mkdir(parents=True, exist_ok=True)
+            log_file.touch(exist_ok=True)
             
             file_handler = logging.FileHandler(log_file_name)
             file_handler.setLevel(log_level)
@@ -70,8 +76,3 @@ def set_logger(
             logger.addHandler(console_handler)
 
     return logger
-
-
-    
-
-
