@@ -22,7 +22,7 @@ from llama_index.core.memory.chat_memory_buffer import ChatMemoryBuffer
 from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 import chromadb
-
+from chromadb.config import Settings, DEFAULT_TENANT
 
 API_DIR = Path(__file__).resolve().parent / "../"
 LOG_FILENAME = str(API_DIR / "./logs/status_logs.log")
