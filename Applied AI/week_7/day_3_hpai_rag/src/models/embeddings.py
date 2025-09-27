@@ -17,5 +17,5 @@ class EmbedModel(GCPAuth):
 
     def huggingface(self, model=None):
         return HuggingFaceEmbedding(
-            model=model or self.DEFAULT_EMBED_MODEL
+            model_name=model or self.DEFAULT_EMBED_MODEL
         )

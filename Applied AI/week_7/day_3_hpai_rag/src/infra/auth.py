@@ -7,11 +7,11 @@ class GCPAuth:
     def __init__(self):
         self.project_id: str = env_config.gcp_project_id
         self.region: str = env_config.gcp_region
-        self.secrets_path: str = None
+        self.secrets_path: str = env_config.gcp_secrets_path
 
     def load_credentials(self):
 
-        if env_config.env.lower() in ["dev", "prod"]:
+        if env_config.env.lower() in ["dev", "staging", "prod"]:
             return None
 
         with open(self.secrets_path, "r") as file:

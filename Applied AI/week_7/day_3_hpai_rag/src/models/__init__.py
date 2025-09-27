@@ -1,7 +1,7 @@
 from src.models.embeddings import EmbedModel
-from src.models.vertex import LLM
+from src.models.vertex import VertexClient
 
 __all__ = [
     "EmbedModel",
-    "LLM"
+    "VertexClient"
 ]

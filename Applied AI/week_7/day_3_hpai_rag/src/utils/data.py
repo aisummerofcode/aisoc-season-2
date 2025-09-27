@@ -60,6 +60,7 @@ class DataHandler:
                 for file in files:
                     filename = file.filename
 
+                    # create project dir with project_id if not exist
                     project_dir = os.path.join(self.data_dir, project_id)
                     if project_dir and not os.path.exists(project_dir):
                         os.makedirs(project_dir, exist_ok=True)
