@@ -1,0 +1,9 @@
+version: '0.1'
+
+services:
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:latest
+    ports:
+      - "8005:8000"
+    volumes:
+      - /mnt/storage-mnt/chromadb:/data

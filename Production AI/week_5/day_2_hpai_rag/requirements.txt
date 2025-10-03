@@ -1,0 +1,14 @@
+groq==0.31.0
+chromadb==1.0.17
+llama-index-core==0.13.2
+llama-index-readers-file==0.5.1
+llama-index-embeddings-huggingface==0.6.0
+llama-index-llms-groq==0.4.0
+llama-index-llms-vertex==0.6.0
+llama-index-vector-stores-chroma==0.5.0
+tiktoken==0.11.0
+fastapi==0.116.1
+uvicorn==0.35.0
+python-multipart==0.0.20
+python-dotenv==1.1.1
+colorama==0.4.6
