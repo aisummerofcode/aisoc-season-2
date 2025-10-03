@@ -1,0 +1,17 @@
+# Google Cloud AI Platform SDK for Vertex AI integration
+google-cloud-aiplatform==1.38.1
+
+# Data manipulation and CSV/Excel processing
+pandas==2.1.4
+
+# Web framework for Cloud Functions HTTP triggers
+flask==3.0.0
+
+# Excel file creation and manipulation
+openpyxl==3.1.2
+
+# Additional dependencies (automatically installed with above packages)
+# - google-auth: Authentication for Google Cloud services
+# - google-cloud-core: Core Google Cloud client library functionality
+# - protobuf: Protocol buffer support for API communication
+# - requests: HTTP library for API calls
