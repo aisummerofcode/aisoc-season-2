@@ -1,13 +1,17 @@
 # AISOC Capstone Projects
 
 📅 November 1 – November 30, 2025
+
 🧠 Get guidance from AISOC team throughout the project phase.
+
 🏆 Compete for $2,500 in cash prizes.
 
-## Project Categories & Topics
-### 1. Biomedical Science
-### 2. Environment
-### 3. Finance
+## Project Categories
+Topics and instructions for each category will be announced soon.
+
+1. Biomedical Science
+2. Environment
+3. Finance
 
 ## Timeline
 - Nov 1: Team formation & Project kick off
