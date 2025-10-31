@@ -1,10 +1,10 @@
 # AISOC Capstone Projects
 
-📅 November 1 – November 30, 2025
+📅 **November 1 – November 30, 2025**
 
 🧠 Get guidance from AISOC team throughout the project phase.
 
-🏆 Compete for $2,500 in cash prizes.
+🏆 Compete for **$2,500 in cash prizes**.
 
 ## Project Categories
 Topics and instructions for each category will be announced soon.
@@ -14,7 +14,7 @@ Topics and instructions for each category will be announced soon.
 3. Finance
 
 ## Timeline
-- Nov 1: Team formation & Project kick off
+- Nov 1: Team formation & Project kick off 
 - Nov 2 – 22: Implementation Phase
 - Nov 22 – 28: Pitch Preparation Phase
 - Nov 29 - 30: Internal live pitching sessions & shortlisting of top 10 teams for Demo Day
