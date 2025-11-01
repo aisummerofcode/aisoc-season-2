@@ -20,11 +20,11 @@ Topics and instructions for each category will be announced at kickoff (See time
 - Nov 29–30: Internal pitching sessions & shortlisting of top 10 teams for Demo Day
 
 ## Demo Day
-Get a chance to demo your project to a large audience at Synopsis AI Conference in December (details coming soon!). Only Dedicated Plan members are eligible.
+Get a chance to demo your project to a large audience at Synopsis AI Conference in December (details coming soon!).
 
 ## Prizes
-Compete for a prize pool of **$2,500**. Non-Dedicated plan members are eligible for honourable mentions.
-- **1st place** - $1,000
-- **2nd place** - $750
-- **3rd place** - $500
-- **Honourable mentions (up to 3)** - $250
+Compete for a prize pool of **$3,000**. Non-Dedicated plan members are eligible for **Next 10 awards** (honourable mentions).
+- 🥇 **1st place** - $1,000
+- 🥈 **2nd place** - $750
+- 🥉 **3rd place** - $500
+- ⭐ **Next 10** - $750 ($75 each)
