@@ -65,7 +65,7 @@ AISOC may publicly promote or share submitted projects, including team names and
 
 By participating, you consent to the use of your name, likeness, voice, photograph, and biographical information by AISOC for publicity and promotional purposes in connection with AISOC programs and initiatives, without further compensation or notice, unless prohibited by law.
 
-### 6. Prize and Award Policy
+### 6. Prizes and Award Policy
 
 AISOC cannot guarantee entry or success in securing prizes based on your participation alone. Prizes are awarded solely based on the evaluation criteria outlined for the Capstone and the specific project topic. AISOC and its judging partners' decisions regarding eligibility, judging, and prize distribution are **final and binding**. All participants who qualify for a prize must successfully complete any required verification process (e.g., identity, eligibility, license compliance).
 
