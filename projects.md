@@ -45,7 +45,7 @@
 
 - **Scope**: This is an open-ended project that seeks creativity in identifying and tackling problems faced by investor in financial markets. A variety of use cases across the stock & crypto markets can be explored including, but not limited to, on-chain analysis, price prediction, investment recommendations, and automated trading. A wide range of data sources including structured and unstructured market data (news, filings, fundamentals) can also be used for this project. Traditional machine learning (including time series & classification) can be integrated for signal generation, risk prediction, etc. Your solution should implement multi-agent RAG pipelines with planning, reasoning and retrieval capailities, and shoild include an interactive interface that provides visualizations and explanations of insights, predictions or decisions made by the AI system.
 
-- **Eligibile Tracks:** Applied AI, ProductiAI, Machine Learning (optional)
+- **Eligibile Tracks:** Applied AI, Production AI, Machine Learning (optional)
 
 - **Team Structure:** Each team must include at least 1 member from the Applied AI track and 1 from Production AI. If your solution uses machine learning, then 1 member from the ML track must be included.
 
@@ -70,9 +70,9 @@
 
 - **Scope**: Open-ended. Let's see your creativity!
 
-- **Eligibile Tracks:** Applied AI, Production AI, LLM Engineering (optional)
+- **Eligibile Tracks:** Applied AI, LLM Engineering, Production AI (optional)
 
-- **Team Structure:** Each team must include members from both the Applied AI and Production AI tracks.
+- **Team Structure:** Each team must include at least 1 member from the Applied AI track.
 
 - **Instructions and Guidelines:** Coming shortly
 
