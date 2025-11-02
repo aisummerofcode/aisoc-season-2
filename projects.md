@@ -6,18 +6,75 @@
 
 🏆 Compete for **$3,000 in cash prizes**.
 
-## Project Categories
-Topics and instructions for each category will be announced at kickoff (See timeline).
-
-1. Biomedical Science
-2. Environment
-3. Finance
-
 ## Timeline
 - Nov 1–2: Team formation & Project kick off, with detailed instructions.
 - Nov 3–22: Implementation Phase
 - Nov 22–28: Pitch Preparation Phase
 - Nov 29–30: Internal pitching sessions & shortlisting of top 10 teams for Demo Day
+
+## Project Categories
+
+### 1. Biomedical Science
+#### AI for Molecular Science
+- **Objective**: LLMs, RAG pipelines, biomolecular data from HuggingFace, and biomolecular knowledge bases (such as UniProt, OncoKB, etc). What can you build?
+
+- **Scope**: This is an open-ended project that seeks creativity in identifying and tackling problems in molecular science using AI. Whether it is protein structure analysis and visualization using [AlphaFold](https://alphafoldserver.com/) & [Uniprot](https://www.uniprot.org/), or functional analysis of biomolecules using [Mol-Instructions dataset](https://huggingface.co/datasets/zjunlp/Mol-Instructions), or novel use of the latest Python packages that bridge molecular biology and machine learning, we want to see it all!
+
+- **Eligibile Tracks:** Applied AI, Production AI, LLM Engineering
+
+- **Team Structure:** Each team must include at least 1 member from Production AI.
+
+- **Instructions and Guidelines:** Coming shortly
+
+#### Semi-Supervised Gene Signature Classification
+- **Objective**: Build and deploy a machine learning system that classifies gene signatures. Optionally can be extended to a full-scale generative AI application with RAG over biomolecular databases.
+
+- **Dataset:** The dataset for this project is from the [MLRW 2022 : AI Driven Biomedical Hackathon](https://www.kaggle.com/competitions/mlrw-biomedicalhackathon/data) on Kaggle. It consists of multiomics data samples which were studied in gene expression signature experiments. There are 2 target variables in the data, `ctrl` and `pert` which are one-hot encoded (0 or 1). These columns indicate whether a sample is control or perturbation and they identify if an experiment as worked for sure. There are in total 20000 samples whose metadata is given. However, manual curated labels are given for 600 out of 20000. You need to use these 600 labels as a starting point to label the remaining training data and improve your model.
+
+- **Scope**: This project seeks solutions to a very specific problem that is useful in understanding underlying molecular causes of disease, effects of drugs. This project is primarily a machine learning project but can be extended with RAG over biomolecular data sources and genomic databases to ground the results, provide additional insights or draw useful scientific connections (be as creative as possible). Your solution should primarily include a simple frontend where a user uploads a molecular sample and the classified gene signature is returned. If the solution scope expands to include RAG, return the insights and results fetched by your retrieval pipeline (this can be as a static output or over interactive chat).
+
+- **Eligibile Tracks:** Machine Learning, Production AI, Applied AI (optional), LLM Engineering (optional)
+
+- **Team Structure:** Each team must include members from both the Machine Learning and Production AI tracks. If your solution includes generative AI, then 1 member from either Applied AI or LLM Engineering must be added to your team.
+
+- **Instructions and Guidelines:** Coming shortly
+
+### 2. Finance
+#### Market Intelligence
+- **Objective**: Build an intelligent application that retrieves and analyzes financial market data to provide investors with market insights, predictive intelligence or decision support. Investors need grounded, explainable answers that combine facts (filings/news) with intelligent signals and clean visual explanations (backtests, risk, etc). This project integrates retrieval, modeling, and visualization.
+
+- **Scope**: This is an open-ended project that seeks creativity in identifying and tackling problems faced by investor in financial markets. A variety of use cases across the stock & crypto markets can be explored including, but not limited to, on-chain analysis, price prediction, investment recommendations, and automated trading. A wide range of data sources including structured and unstructured market data (news, filings, fundamentals) can also be used for this project. Traditional machine learning (including time series & classification) can be integrated for signal generation, risk prediction, etc. Your solution should implement multi-agent RAG pipelines with planning, reasoning and retrieval capailities, and shoild include an interactive interface that provides visualizations and explanations of insights, predictions or decisions made by the AI system.
+
+- **Eligibile Tracks:** Applied AI, Production AI, Machine Learning (optional)
+
+- **Team Structure:** Each team must include at least 1 member from the Applied AI track and 1 from Production AI. If your solution uses machine learning, then 1 member from the ML track must be included.
+
+- **Instructions and Guidelines:** Coming shortly
+
+#### Fraud Intelligence
+- **Objective**: Build a fraud decisioning system that consists of a ML system that is trained on financial transaction records and a real-time decisioning engine that interpretes the ML predictions and returns a decision on every incoming transaction (ALLOW, REJECT, PEND) with low latency.
+
+- **Dataset:** The dataset for this project is the [Financial Transactions Dataset: Analytics](https://www.kaggle.com/datasets/computingvictor/transactions-fraud-datasets/data) from Kaggle. It consists of transaction records, customer information and card data from a banking institution, spanning across the 2010s decade. 
+
+- **Scope**: This project seeks solutions to a very specific problem, namely fraud detection and decisioning. Your solution should include a simple frontend where a user can initiate a payment transaction and the decision is returned.
+
+- **Eligibile Tracks:** Machine Learning, Production AI
+
+- **Team Structure:** Each team must include members from both the Machine Learning and Production AI tracks.
+
+- **Instructions and Guidelines:** Coming shortly
+
+### 3. Environment
+#### AI for Crisis Response
+- **Objective:** Build an AI system that detects and explains emerging local crises (natural disasters, floods, disease outbreaks, infrastructure failures) by combining RAG over heterogeneous sources (news, government alerts, OSM, HDX docs), with interactive visualizations (map + timeline + resource allocation recommendations).
+
+- **Scope**: Open-ended. Let's see your creativity!
+
+- **Eligibile Tracks:** Applied AI, LLM Engineering, Production AI (optional)
+
+- **Team Structure:** Each team must include at least 1 member from the Applied AI track.
+
+- **Instructions and Guidelines:** Coming shortly
 
 ## Demo Day
 Get a chance to demo your project to a large audience at Synopsis AI Conference in December (details coming soon!).
