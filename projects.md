@@ -65,6 +65,7 @@
 - **Instructions and Guidelines:** Coming shortly
 
 ### 3. Environment
+#### AI for Crisis Response
 - **Objective:** Build an AI system that detects and explains emerging local crises (natural disasters, floods, disease outbreaks, infrastructure failures) by combining RAG over heterogeneous sources (news, government alerts, OSM, HDX docs), with interactive visualizations (map + timeline + resource allocation recommendations).
 
 - **Scope**: Open-ended. Let's see your creativity!
