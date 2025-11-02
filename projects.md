@@ -6,8 +6,10 @@
 
 🏆 Compete for **$3,000 in cash prizes**.
 
+Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **Nov 4, 2025** to enter.
+
 ## Timeline
-- Nov 1–2: Team formation & Project kick off, with detailed instructions.
+- Nov 1–2: Team formation & Project kick off
 - Nov 3–22: Implementation Phase
 - Nov 22–28: Pitch Preparation Phase
 - Nov 29–30: Internal pitching sessions & shortlisting of top 10 teams for Demo Day
@@ -18,7 +20,7 @@
 #### AI for Molecular Science
 - **Objective**: LLMs, RAG pipelines, biomolecular data from HuggingFace, and biomolecular knowledge bases (such as UniProt, OncoKB, etc). What can you build?
 
-- **Scope**: This is an open-ended project that seeks creativity in identifying and tackling problems in molecular science using AI. Whether it is protein structure analysis and visualization using [AlphaFold](https://alphafoldserver.com/) & [Uniprot](https://www.uniprot.org/), or functional analysis of biomolecules using [Mol-Instructions dataset](https://huggingface.co/datasets/zjunlp/Mol-Instructions), or novel use of the latest Python packages that bridge molecular biology and machine learning, we want to see it all!
+- **Scope**: This is an open-ended project that seeks creativity in identifying and tackling problems in molecular science using AI. Whether it is protein structure analysis and visualization using [AlphaFold](https://alphafoldserver.com/) & [Uniprot](https://www.uniprot.org/), or functional analysis of biomolecules using [Mol-Instructions dataset](https://huggingface.co/datasets/zjunlp/Mol-Instructions) with RAG and LLMs, or novel use of the latest Python packages that bridge molecular biology and machine learning, we want to see it all!
 
 - **Eligibile Tracks:** Applied AI, Production AI, LLM Engineering
 
