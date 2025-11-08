@@ -42,7 +42,7 @@ Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **No
 - **Instructions and Guidelines:** Coming shortly
 
 ### 2. Finance
-#### Market Intelligence
+#### Financial Market Intelligence
 - **Objective**: Build an intelligent application that retrieves and analyzes financial market data to provide investors with market insights, predictive intelligence or decision support. Investors need grounded, explainable answers that combine facts (filings/news) with intelligent signals and clean visual explanations (backtests, risk, etc). This project integrates retrieval, modeling, and visualization.
 
 - **Scope**: This is an open-ended project that seeks creativity in identifying and tackling problems faced by investor in financial markets. A variety of use cases across the stock & crypto markets can be explored including, but not limited to, on-chain analysis, price prediction, investment recommendations, and automated trading. A wide range of data sources including structured and unstructured market data (news, filings, fundamentals) can also be used for this project. Traditional machine learning (including time series & classification) can be integrated for signal generation, risk prediction, etc. Your solution should implement multi-agent RAG pipelines with planning, reasoning and retrieval capailities, and shoild include an interactive interface that provides visualizations and explanations of insights, predictions or decisions made by the AI system.
@@ -66,17 +66,13 @@ Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **No
 
 - **Instructions and Guidelines:** Coming shortly
 
-### 3. Environment
-#### AI for Crisis Response
-- **Objective:** Build an AI system that detects and explains emerging local crises (natural disasters, floods, disease outbreaks, infrastructure failures) by combining RAG over heterogeneous sources (news, government alerts, OSM, HDX docs), with interactive visualizations (map + timeline + resource allocation recommendations).
+## Dedicated Resources
+If you are in the Dedicated Group, the following resources will be provided on demand.
 
-- **Scope**: Open-ended. Let's see your creativity!
+- Compute (Google Cloud): Up to $30 compute credits per team. This gives you access to a wide range of GCP services including Cmpute Engine and Vertex AI
+- OpenAI API: Up to $10 per team
 
-- **Eligibile Tracks:** Applied AI, LLM Engineering, Production AI (optional)
-
-- **Team Structure:** Each team must include at least 1 member from the Applied AI track.
-
-- **Instructions and Guidelines:** Coming shortly
+Send us a request whenever you need these resources.
 
 ## Demo Day
 Get a chance to demo your project to a large audience at Synopsis AI Conference in December (details coming soon!).
