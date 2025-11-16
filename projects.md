@@ -10,9 +10,9 @@ Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **No
 
 ## Timeline
 - Nov 1–2: Team formation & Project kick off
-- Nov 3–22: Implementation Phase
-- Nov 22–28: Pitch Preparation Phase
-- Nov 29–30: Internal pitching sessions & shortlisting of top 10 teams for Demo Day
+- Nov 3–30: Implementation Phase
+- Dec 1–5: Pitch Preparation Phase
+- Dec 6–7: Internal pitching sessions & shortlisting of top 7 teams for Demo Day
 
 ## Project Categories
 
@@ -78,11 +78,11 @@ Send us a request whenever you need these resources.
 Get a chance to demo your project to a large audience at Synopsis AI Conference in December (details coming soon!).
 
 ## Prizes
-Compete for a prize pool of **$3,000**. Non-Dedicated plan members are eligible for **Next 10 awards** (honourable mentions).
+Compete for a prize pool of **$3,000**. Non-Dedicated plan members are eligible for **honourable mentions**.
 - 🥇 **1st place** – $1,000
 - 🥈 **2nd place** – $750
 - 🥉 **3rd place** – $500
-- ⭐ **Next 10** – $750 ($75 each)
+- ⭐ **Honourable mentions** – $750
 
 ## Terms of Participation
 
