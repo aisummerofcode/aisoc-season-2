@@ -26,7 +26,7 @@ Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **No
 
 - **Team Structure:** Each team must include at least 1 member from Production AI.
 
-- **Instructions and Guidelines:** Coming shortly
+- **Instructions and Guidelines:** [Submit here](.github/ISSUE_TEMPLATE/capstone.yml)
 
 #### Semi-Supervised Gene Signature Classification
 - **Objective**: Build and deploy a machine learning system that classifies gene signatures. Optionally can be extended to a full-scale generative AI application with RAG over biomolecular databases.
@@ -39,7 +39,7 @@ Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **No
 
 - **Team Structure:** Each team must include members from both the Machine Learning and Production AI tracks. If your solution includes generative AI, then 1 member from either Applied AI or LLM Engineering must be added to your team.
 
-- **Instructions and Guidelines:** Coming shortly
+- **Instructions and Guidelines:** [Submit here](.github/ISSUE_TEMPLATE/capstone.yml)
 
 ### 2. Finance
 #### Financial Market Intelligence
@@ -51,7 +51,7 @@ Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **No
 
 - **Team Structure:** Each team must include at least 1 member from the Applied AI track and 1 from Production AI. If your solution uses machine learning, then 1 member from the ML track must be included.
 
-- **Instructions and Guidelines:** Coming shortly
+- **Instructions and Guidelines:** [Submit here](.github/ISSUE_TEMPLATE/capstone.yml)
 
 #### Fraud Intelligence
 - **Objective**: Build a fraud decisioning system that consists of a ML system that is trained on financial transaction records and a real-time decisioning engine that interpretes the ML predictions and returns a decision on every incoming transaction (ALLOW, REJECT, PEND) with low latency.
@@ -64,7 +64,7 @@ Submit the [Participation Form](https://forms.gle/F6G21zsTmJHwny6D8) before **No
 
 - **Team Structure:** Each team must include members from both the Machine Learning and Production AI tracks.
 
-- **Instructions and Guidelines:** Coming shortly
+- **Instructions and Guidelines:** [Submit here](.github/ISSUE_TEMPLATE/capstone.yml)
 
 ## Dedicated Resources
 If you are in the Dedicated Group, the following resources will be provided on demand.

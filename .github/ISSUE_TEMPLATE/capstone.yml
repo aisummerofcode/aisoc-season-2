@@ -1,0 +1,53 @@
+name: Capstone Project Submission
+description: "Submit your Capstone project"
+title: "Project: <insert project title here>"
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Team Name
+      description: Name of your team
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a short description of your project
+    validations:
+      required: true
+  - type: input
+    id: repo_url
+    attributes:
+      label: Project Repository
+      description: URL of the GitHub repo for your project. If private, ensure you provide repo access to the supervisor (pibzion)
+    validations:
+      required: true
+  - type: input
+    id: app_url
+    attributes:
+      label: Application URL
+      description: URL of the functional application.
+    validations:
+      required: true
+  - type: input
+    id: demo_url
+    attributes:
+      label: Demo Video URL
+      description: URL of the video demo for your application. 5 mins max!
+    validations:
+      required: true
+  - type: input
+    id: contributors
+    attributes:
+      label: Contributors
+      description: List the names of team members who contributed to this project
+    validations:
+      required: true
+  - type: textarea
+    id: comments
+    attributes:
+      label: Comments (Optional)
+      description: Add any other information you wish to share here
+    validations:
+      required: false
