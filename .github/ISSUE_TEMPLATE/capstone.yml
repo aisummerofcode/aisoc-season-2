@@ -19,21 +19,35 @@ body:
   - type: input
     id: repo_url
     attributes:
-      label: Project Repository URL
-      description: URL of the GitHub repo with your assignment. If private, ensure you provide repo access to the instructor (pibzion)
+      label: Project Repository
+      description: URL of the GitHub repo for your project. If private, ensure you provide repo access to the supervisor (pibzion)
+    validations:
+      required: true
+  - type: input
+    id: app_url
+    attributes:
+      label: Application URL
+      description: URL of the functional application.
     validations:
       required: true
   - type: input
     id: demo_url
     attributes:
       label: Demo Video URL
-      description: URL of the video demo for your Stramlit application. 2 mins max!
+      description: URL of the video demo for your application. 5 mins max!
     validations:
       required: true
   - type: input
     id: contributors
     attributes:
       label: Contributors
-      description: Names of team members who contributed to the project
+      description: List the names of team members who contributed to this project
     validations:
       required: true
+  - type: textarea
+    id: comments
+    attributes:
+      label: Comments (Optional)
+      description: Add any other information you wish to share here
+    validations:
+      required: false
