@@ -1,0 +1,39 @@
+name: Capstone Project Submission
+description: "Submit your Capstone project"
+title: "Project: <insert project title here>"
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Team Name
+      description: Name of your team
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a short description of your project
+    validations:
+      required: true
+  - type: input
+    id: repo_url
+    attributes:
+      label: Project Repository URL
+      description: URL of the GitHub repo with your assignment. If private, ensure you provide repo access to the instructor (pibzion)
+    validations:
+      required: true
+  - type: input
+    id: demo_url
+    attributes:
+      label: Demo Video URL
+      description: URL of the video demo for your Stramlit application. 2 mins max!
+    validations:
+      required: true
+  - type: input
+    id: contributors
+    attributes:
+      label: Contributors
+      description: Names of team members who contributed to the project
+    validations:
+      required: true
